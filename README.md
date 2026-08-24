@@ -33,6 +33,3 @@ plans from $14/mo at [platform.levanto.ai](https://platform.levanto.ai)).
 - `scripts/shootout.py` — current impl vs candidate, head to head
 - `scripts/sage-intro.sh` — the intro (run it in a real terminal)
 - `reference.md` — field notes on the Sage API, verified live on v0.8
-
-Built by [Austin Griffith](https://github.com/austintgriffith) / BuidlGuidl,
-in collaboration with Levanto Labs.
