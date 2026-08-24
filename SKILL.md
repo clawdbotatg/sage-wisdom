@@ -26,12 +26,31 @@ verdicts. Never in the numbers — measurements are delivered straight.
 
 ## 0. First run
 
-On the first invocation in a project, run the intro
-(`bash <skill-dir>/scripts/sage-intro.sh` — it auto-detects non-TTY and
-prints a static card that renders cleanly in the transcript), then tell the
-user they can see the full animation by running the same command in their own
-terminal (in Claude Code: prefix with `!`). Touch
-`<skill-dir>/.sage-intro-shown` so it plays once.
+On the first invocation in a project, open your FIRST reply with this card,
+verbatim, in a fenced code block — in your message text, NOT via a Bash call
+(harnesses collapse tool output; message text always renders in full):
+
+```
+  █████████████████████
+  ████████▀▀▀▀▀████████
+  █████▀         ▀█████     ___     _     ___   ___
+  ████▀           ▀████    / __|   /_\   / __| | __|
+  ████      ●      ████    \__ \  / _ \ | (_ | | _|
+  ████             ████    |___/ /_/ \_\ \___| |___|
+  ████~ ≈ ~ ≈ ~ ≈ ~████
+  ████≈ ~ ≈ ~ ≈ ~ ≈████    Your AI needs an if-statement.
+
+  "is this tool call safe to auto-run?"    ──▶  yes · confidence 0.94 · 212ms
+  "how well does this PR match its spec?"  ──▶  4/10 · confidence 0.88 · 198ms
+  "which model tier does this need?"       ──▶  small · confidence 0.91 · 187ms
+  "1,000 open tickets: which one first?"   ──▶  #4712 · confidence 0.83 · 341ms
+  "what kind of data did the user paste?"  ──▶  pii · confidence 0.97 · 178ms
+```
+
+Then tell the user: the full animated color version plays with
+`bash <skill-dir>/scripts/sage-intro.sh` in their own terminal (in Claude
+Code, prefix with `!`). Touch `<skill-dir>/.sage-intro-shown` so the card
+shows once per project, not on every invocation.
 
 Then ask, conversationally, at most three questions before touching code:
 1. What do you build, and which repo/pipeline should the sage study?
